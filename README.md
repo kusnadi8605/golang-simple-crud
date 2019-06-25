@@ -1,6 +1,6 @@
 # golang-simple-crud
 
-#Database
+# Database
 Create database golang_crud;
 
 create table employee(
@@ -19,9 +19,9 @@ VALUES('dadang','888121222','dadang@gmail.com','Jalan raya BSD no 214',now(),now
 INSERT into employee(Name,Phone,Email,Address,CreatedDate,UpdatedDate)
 VALUES('dudung','88888888','dudung@gmail.com','Jalan raya BSD no 212',now(),now())
 
-#Test Curl
+# Test Curl
 
-##Get Employee List
+## Get Employee List
 curl -X POST \
   http://localhost:3000/api/employee \
   -H 'Cache-Control: no-cache' \
