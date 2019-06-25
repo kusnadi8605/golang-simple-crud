@@ -13,11 +13,11 @@ CreatedDate timestamp,
 UpdatedDate timestamp
 );
 
-INSERT into employee(Name,Phone,Email,Address,CreatedDate,UpdatedDate)
-VALUES('dadang','888121222','dadang@gmail.com','Jalan raya BSD no 214',now(),now());
+INSERT into employee(Name,Phone,Email,Address,CreatedDate)
+VALUES('dadang','888121222','dadang@gmail.com','Jalan raya BSD no 214',now());
 
 INSERT into employee(Name,Phone,Email,Address,CreatedDate,UpdatedDate)
-VALUES('dudung','88888888','dudung@gmail.com','Jalan raya BSD no 212',now(),now())
+VALUES('dudung','88888888','dudung@gmail.com','Jalan raya BSD no 212',now());
 
 # Test Curl
 
