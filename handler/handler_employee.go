@@ -15,26 +15,10 @@ func GetEmployeeHandler(conn *conf.Connection) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, req *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-
-		var reqEmployee dts.EmployeeRequest
 		var EmployeeResponse dts.EmployeeResponse
 
 		logDate := time.Now().Format("20060102")
 		conf.SetFilename(conf.Param.LogDir + conf.Param.LogsFile["Employee"] + logDate + ".txt")
-
-		body, err := ioutil.ReadAll(req.Body)
-
-		err = json.Unmarshal(body, &reqEmployee)
-		if err != nil {
-			EmployeeResponse.ResponseCode = "500"
-			EmployeeResponse.ResponseDesc = err.Error()
-			json.NewEncoder(w).Encode(EmployeeResponse)
-
-			conf.Logf("Decode Employee : %s", err)
-
-			return
-		}
-
 		listEmployee, err := mdl.GetEmployee(conn)
 
 		if err != nil {
