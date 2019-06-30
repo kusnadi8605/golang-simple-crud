@@ -28,6 +28,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	http.HandleFunc("/api/employeeSave", mdw.Chain(hdlr.EmployeeSaveHandler(conn), mdw.ContentType("application/json"), mdw.Method("POST")))
+	http.HandleFunc("/api/employeeUpdate", mdw.Chain(hdlr.EmployeeUpdateHandler(conn), mdw.ContentType("application/json"), mdw.Method("POST")))
 	http.HandleFunc("/api/employee", mdw.Chain(hdlr.GetEmployeeHandler(conn), mdw.ContentType("application/json"), mdw.Method("POST")))
 	http.HandleFunc("/api/employeeDetail", mdw.Chain(hdlr.GetEmployeeDetailHandler(conn), mdw.ContentType("application/json"), mdw.Method("POST")))
 
