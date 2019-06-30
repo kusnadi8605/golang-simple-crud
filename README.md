@@ -21,6 +21,38 @@ VALUES('dudung','88888888','dudung@gmail.com','Jalan raya BSD no 212',now());
 
 # Test Curl
 
+## New Employee
+curl -X POST \
+  http://localhost:3000/api/employeeSave \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 01008f78-804d-4ce1-b25c-b2c6a3ad746e' \
+  -H 'cache-control: no-cache' \
+  -d '{
+
+"name":"dadang",
+"email":"dadang@gmial.com",
+"phone":"88881111222",
+"address":"Jl. Pulau seribu no 212, Tangsel"
+}'
+
+## Update Employee
+
+curl -X POST \
+  http://localhost:3000/api/employeeUpdate \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -d '{
+"id":1,
+"name":"dudung",
+"email":"dudung@gmial.com",
+"phone":"88881111222",
+"address":"Jl. Pulau seribu no 212, Tangsel"
+}'
+
+
+
 ## Get Employee List
 curl -X POST \
   http://localhost:3000/api/employee \
